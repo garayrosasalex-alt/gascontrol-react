@@ -1,0 +1,125 @@
+:root {
+  --navy: #1e3a52;
+  --ink: #10202e;
+  --orange: #d9541a;
+  --blue: #1769a3;
+  --bg: #f2f5f8;
+  --card: #ffffff;
+  --muted: #56677a;
+  --line: #d5dce4;
+  --danger: #b03a2e;
+  --ok: #2a8c6a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+h1, h2, h3 { margin: 0 0 0.5rem; color: var(--ink); }
+.muted { color: var(--muted); }
+.error { color: var(--danger); font-size: 0.9rem; }
+.ok { color: var(--ok); font-weight: 600; }
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-primary { background: var(--orange); color: #fff; }
+.btn-secondary { background: #fff; color: var(--navy); border: 1px solid var(--line); }
+
+/* Formularios */
+label { display: block; margin: 0.6rem 0 0.2rem; font-weight: 600; font-size: 0.9rem; }
+input {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #9aa8b6;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+input:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+
+/* Header y layout interno */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem;
+  background: var(--navy);
+  color: #fff;
+}
+.brand { font-family: Cambria, Georgia, serif; font-size: 1.4rem; font-weight: 700; }
+.topbar-user { display: flex; align-items: center; gap: 1rem; }
+
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.body { flex: 1; display: flex; }
+.sidebar {
+  width: 190px;
+  padding: 1rem 0.8rem;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.sidebar a {
+  padding: 0.55rem 0.8rem;
+  border-radius: 6px;
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+}
+.sidebar a.active { background: var(--navy); color: #fff; }
+.content { flex: 1; padding: 1.4rem; max-width: 1000px; }
+
+/* Tarjetas, tablas y formularios en cuadrícula */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.form-grid h3, .form-grid .full { grid-column: 1 / -1; }
+.list-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.list-header input { max-width: 260px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; }
+th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); }
+th { background: var(--navy); color: #fff; }
+
+/* Dashboard */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.kpi { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
+.kpi span { display: block; color: var(--muted); font-size: 0.9rem; }
+.kpi strong { font-size: 1.8rem; }
+.kpi.pending strong { color: var(--line); }
+
+/* Inicio y login */
+.hero { text-align: center; padding: 4rem 1rem; }
+.hero h1 { font-family: Cambria, Georgia, serif; font-size: 2.4rem; }
+.hero p { color: var(--muted); font-size: 1.2rem; margin-bottom: 1.5rem; }
+.chips { display: flex; justify-content: center; gap: 0.6rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.chips span { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.9rem; }
+.login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.login-card { width: 100%; max-width: 360px; }
+.login-card .btn { width: 100%; margin-top: 1rem; text-align: center; }
+
+@media (max-width: 700px) {
+  .body { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; border-right: 0; border-bottom: 1px solid var(--line); }
+  .form-grid { grid-template-columns: 1fr; }
+}

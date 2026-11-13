@@ -1,0 +1,10 @@
+{
+  "usuarios": [
+    { "id": 1, "usuario": "admin", "password": "admin123", "rol": "administrador", "nombre": "Administrador" },
+    { "id": 2, "usuario": "operador", "password": "operador123", "rol": "operador", "nombre": "Operador de ventas" }
+  ],
+  "clientes": [
+    { "id": 1, "nombre": "María Quispe", "documento": "45678912", "telefono": "987654321", "direccion": "Av. Los Olivos 123" },
+    { "id": 2, "nombre": "Juan Pérez", "documento": "71234567", "telefono": "912345678", "direccion": "Jr. Lima 456" }
+  ]
+}
